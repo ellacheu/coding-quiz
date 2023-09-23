@@ -1,6 +1,12 @@
 const startQuiz = `Try to answer to following code related questions within the time limit.
 Keep in mind that incorrect answers will penalize your score/time by ten seconds!`
-// add start quiz button
+// add start quiz button that starts timer and presents question
+
+const quizCard = document.getElementsByClassName("card-body");
+const questionElement = document.getElementById("question");
+const choiceElement = document.getElementById("choices");
+
+console.log(questionElement);
 
 const questions = [
     {
@@ -35,7 +41,18 @@ const allDone = `All done!
 Your final score is`
 // enter intials - form - submit button 
 
+
 console.log(startQuiz);
 console.log(questions);
 
+/* Start button
+start timer and presented with question
+answer question
+presented with next question
+when answered incorrectly
+timer subtracts 10 seconds
+when all question are answer OR timer reaches zero
+the game is over
+can save initial and score
+*/
 
