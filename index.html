@@ -5,25 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Coding Quiz Challenge</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
     <div class="wrapper">
       <header>
         <h1>Coding Quiz Challenge</h1>
       </header>
-      <div class="quiz-card">   
-        <p id="question">question</p>
-        <ul id="choices">choices</ul>
+      <div class="quiz-card"> 
+
+        <div id="timer">Timer: <span id="time-remaining">75</span></div>
+        
+        <p id="question">Question</p>
+        <ul id="choices">
+            <li><button onclick="checkAnswer(0)">Choice 1</button></li>
+            <li><button onclick="checkAnswer(1)">Choice 2</button></li>
+            <li><button onclick="checkAnswer(2)">Choice 3</button></li>
+            <li><button onclick="checkAnswer(3)">Choice 4</button></li>
+        </ul>
+
+        <p id="score">Score: 0</p>
         </div>
         <div class="card-body">
      
         </div>
         <div class="card-footer">
-         
+                  
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>

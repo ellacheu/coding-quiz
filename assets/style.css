@@ -39,12 +39,32 @@ header {
   margin: 0 auto;
   max-width: 800px;
   max-height: 800px;
-  padding: 30px 40px;
+  padding: 40px 40px;
 }
 
-#question p {
-  font-size: 50px;
+#question {
+  font-size: 25px;
   font-weight: bolder;
+}
+
+#choices button {
+  border-radius: 10px;
+    cursor: pointer; 
+    padding: 10px;
+    background-color: rgb(191, 163, 255);
+    font-size: 15px;
+    margin: 5px;
+    align-content: center;
+  }
+
+#timer {
+  padding-top: 5px;
+  float: right; 
+}
+
+#score {
+  float: right;
+  padding-bottom: 20px;
 }
 
 .card-header::after {
