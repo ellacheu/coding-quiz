@@ -33,18 +33,18 @@ console.log(questions);
 // add start quiz button that starts timer and presents question
 
 // starting point of quiz
-let currentQuestion = 0;
+let questionIndex = 0;
 let score = 0;
 let timeLeft = 75;
 
 // variables for functions
-const questionElement = document.querySelector("#questionDiv");
+const questionEl = document.querySelector("#questionDiv");
 const choiceList = document.querySelector("#choices")
 const timerDisplay = document.querySelector("#time-remaining");
 const scoreDisplay = document.querySelector("#score");
 const wrapper = document.querySelector(".wrapper")
 
-// timer element and function
+// timer variables and function
 let timerValue = 75;
 var holdInterval = 0;
 var penalty = 10;
@@ -55,14 +55,30 @@ timerDisplay.addEventListener("click", function () {
         holdInterval = setInterval(function () {
             secondsLeft --;
             timerValue.textContent = "Time " + secondsLeft;
-        })
+
+            if (secondsLeft <=0) {
+                clearInterval(holdInterval);
+                allDone();
+                timerValue.textContent = "Time's up!";
+            }
+        }, 1000)
+    render(questionIndex);
 });
 
-        // add time reduction from false answer
-        // timer decrement by 10
+function render(questionIndex) {
+    questionDiv.innerHTML = "";
+    ulCreate.innerHTML = "";
+
+    for (var i = 0; i < questions.length; i++);
+    var currentQuestion = questions[questionIndex].question;
+    var currentChoices = questions[questionIndex].choices;
+    questionsDiv.textContent = currentQuestion;
+}
 
 
-const timerInterval = setInterval(updateTimer, 1000);
+// add time reduction from false answer
+// timer decrement by 10
+
 
 // scorecard / save initials
 const allDone = `All done!

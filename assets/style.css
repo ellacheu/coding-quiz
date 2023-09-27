@@ -34,7 +34,7 @@ header h2 {
   font-size: 15px;
 }
 
-.quiz-card {
+#questionsDiv {
   background-color: white;
   border-radius: 5px;
   border-width: 1px;
