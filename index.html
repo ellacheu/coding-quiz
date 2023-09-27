@@ -8,27 +8,40 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <div class="wrapper">
+    <div id="wrapper">
       <header>
         <h1>Coding Quiz Challenge</h1>
         <h2>Try to answer to following code related questions within the time limit.
           <br>Keep in mind that incorrect answers will penalize your score/time by ten seconds!</h2>
-      </header>
-      <div id="questionsDiv"> 
-        
-        <div class="high-scores"> View High Scores</div>
-        <div id="timer">Timer: <span id="time-remaining">75</span></div>
-        
-        
-        <ul id="choices">
-     
-        <button id="startTime">Start Quiz</button>
-        </ul>
+      </header>     
 
-        <p id="score">Score: 0</p>
-        </div>
-        <div class="card-body">
+      <!-- high scores link -->
+      <div id="high-scores"> View High Scores</div>
+
+      <!-- timer -->
+      <div id="timer"><span id="time-remaining">75 Seconds</span></div>
+
+
+      <!-- quiz container -->
+      <div id="questionsDiv"> 
+
      
+           
+      <ul id="choicesUl">
+     
+       
+      </ul>
+
+      <!-- start button -->
+      <button id="startTime">Start Quiz</button>
+
+      <!-- score display -->
+        
+        </div>
+
+
+        <div class="card-body">
+          <p id="score">Score: 0</p>
         </div>
         <div class="card-footer">
                   
