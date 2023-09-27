@@ -30,47 +30,37 @@ const questions = [
 
 console.log(questions);
 
+// add start quiz button that starts timer and presents question
+
 // starting point of quiz
 let currentQuestion = 0;
 let score = 0;
 let timeLeft = 75;
 
 // variables for functions
-const questionElement = document.getElementById("question");
-const choiceList = document.getElementById("choices")
-const timerDisplay = document.getElementById("time-remaining");
-const scoreDisplay = document.getElementById("score");
-
-// displaying questions in quiz card
-function displayQuestion() {
-    console.log("questions");
-  
-} 
-
-
-// first card before start of quiz?
-const startQuiz = `Try to answer to following code related questions within the time limit.
-Keep in mind that incorrect answers will penalize your score/time by ten seconds!`
-// add start quiz button that starts timer and presents question
-
+const questionElement = document.querySelector("#questionDiv");
+const choiceList = document.querySelector("#choices")
+const timerDisplay = document.querySelector("#time-remaining");
+const scoreDisplay = document.querySelector("#score");
+const wrapper = document.querySelector(".wrapper")
 
 // timer element and function
-const timerElement = document.getElementById("time-remaining");
 let timerValue = 75;
+var holdInterval = 0;
+var penalty = 10;
+var ulCreate = document.createElement("ul");
 
-function updateTimer() {
-    timerElement.textContent = timerValue + " seconds";
-
-    if (timerValue <= 0) {
-        clearInterval(timerInterval);
-        timerElement.textContent = "Time's Up!";
+timerDisplay.addEventListener("click", function () {
+    if (holdInterval === 0)
+        holdInterval = setInterval(function () {
+            secondsLeft --;
+            timerValue.textContent = "Time " + secondsLeft;
+        })
+});
 
         // add time reduction from false answer
-        // timer decrement
-    } else {
-        timerValue--;
-    }
-}
+        // timer decrement by 10
+
 
 const timerInterval = setInterval(updateTimer, 1000);
 

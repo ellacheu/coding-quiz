@@ -30,6 +30,10 @@ header {
   color: hsl(206, 17%, 28%);
 }
 
+header h2 {
+  font-size: 15px;
+}
+
 .quiz-card {
   background-color: white;
   border-radius: 5px;
