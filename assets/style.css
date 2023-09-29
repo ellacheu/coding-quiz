@@ -46,34 +46,55 @@ header h2 {
   padding: 40px 40px;
 }
 
+
 #question {
   font-size: 25px;
   font-weight: bolder;
 }
 
 button {
+  display: flex;
+  justify-content: center;
   border-radius: 10px;
     cursor: pointer; 
-    padding: 10px;
+    padding: 15px;
     background-color: rgb(191, 163, 255);
     font-size: 15px;
-    margin: 5px;
+    margin: 10px;
     
   }
 
+#return {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer; 
+   background-color: rgb(191, 163, 255);
+  font-size: 15px;
+
+}
+
 #high-scores {
-  margin-left: 500px;
+  display: flex;
+  justify-content: center;
 }
 
 #timer {
+  display: flex;
+  justify-content: center;
   padding-top: 5px;
   padding-bottom: 10px;
-  margin-left: 500px;
-}
+  }
 
 #score {
   margin-left: 500px;
   padding-bottom: 20px;
+}
+
+#createLi{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-header::after {
@@ -85,6 +106,9 @@ button {
 }
 
 .card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100px;
 }
 

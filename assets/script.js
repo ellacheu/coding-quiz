@@ -32,7 +32,7 @@ var questions = [
 
 // starting point of quiz
 var questionIndex = 0;
-var score = 0;
+var score = 1;
 
 // variables for functions
 var questionsDiv = document.querySelector("#questionsDiv");
@@ -126,17 +126,7 @@ function allDone() {
     createTitle.textContent =  "All done!"
 
     questionsDiv.appendChild(createTitle);
-
       
-    if (timeRemaining >= 0) {
-        var timerRemaining = timeLeft;
-        var createFinalScore = document.createElement("p");
-        createFinalScore.setAttribute("id", "createFinalScore");
-        clearInterval(holdInterval);
-        createFinalScore.textContent = "Your final score is " + timeLeft;
-
-        questionsDiv.appendChild(createFinalScore);
-    }
 
     var createForm = document.createElement("form")
     createForm.setAttribute("id", "createForm");
@@ -158,12 +148,30 @@ function allDone() {
 
     questionsDiv.appendChild(createSubmit);
 
+    createSubmit.addEventListener("click", function(){
+        var initials = createInput.value;
+
+        if (initials === null) {
+            console.log ("Invalid Input");
+        } else {
+            var finalScore = {
+                initials: initials,
+                score: score
+            }
+        console.log(finalScore);
+        var highScores = localStorage.getItem("highScores");
+        if (highScores === null) {
+            highScores = [];
+        } else {
+            highScores = JSON.parse(highScores);
+        }
+        highScores.push(finalScore);
+        var newScore = JSON.stringify(highScores);
+        localStorage.setItem("highScores", newScore);
+        window.location.replace("./highscore.html");
+        }
+    });
+
 }
 
-
-
-/*when all question are answer OR timer reaches zero
-the game is over
-can save initial and score
-*/
 
