@@ -8,12 +8,12 @@ var questions = [
     {
     question: "The condition in a if / else statement is enclosed with ___.",
     choices: ["quotes", "curly brackets", "parenthesis", "square brackets"],
-    answer: "quotes",
+    answer: "curly brackets",
     },
     {
     question: "Arrays in JavaScript can be used to store ____.",
     choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-    answer: "booleans",
+    answer: "all of the above",
     },
     {
     question: "String values must be enclosed within ____ when being assigned to variables.",
@@ -23,7 +23,7 @@ var questions = [
     {
     question: "A very useful tool used during development and debuggings for printing to the debugger is:",
     choices: ["JavaScript", "terminal/bash", "for loops", "console.log"],
-    answer: "for loops",
+    answer: "console log",
     }
 
 ];
@@ -78,8 +78,7 @@ function render(questionIndex) {
         var listItem = document.createElement("li");
         listItem.textContent = newCard;
         questionsDiv.appendChild(ulCreate);
-        
-   
+          
         button.addEventListener("click", (compare));
     })
 
@@ -103,32 +102,67 @@ function compare(event) {
         }
 
     }
+
+
+questionIndex++;
+
+if(questionIndex >= questions.length) {
+    allDone();
+     createDiv.textContent = "End of quiz! " + "Your Score " + score;
+} else {
+    render(questionIndex);
+}
+questionsDiv.appendChild(createDiv);
+
+
+}
+
+function allDone() {
+    questionsDiv.innerHTML = "";
+    timeRemaining.innerHTML = "";
+
+    var createTitle = document.createElement("h1");
+    createTitle.setAttribute("id", "createTitle");
+    createTitle.textContent =  "All done!"
+
+    questionsDiv.appendChild(createTitle);
+
+      
+    if (timeRemaining >= 0) {
+        var timerRemaining = timeLeft;
+        var createFinalScore = document.createElement("p");
+        createFinalScore.setAttribute("id", "createFinalScore");
+        clearInterval(holdInterval);
+        createFinalScore.textContent = "Your final score is " + timeLeft;
+
+        questionsDiv.appendChild(createFinalScore);
+    }
+
+    var createForm = document.createElement("form")
+    createForm.setAttribute("id", "createForm");
+    createForm.textContent = "Enter your intials: ";
+
+    questionsDiv.appendChild(createForm);
+
+    var createInput = document.createElement("input");
+    createInput.setAttribute("type", "text");
+    createInput.setAttribute("id", "initials");
+    createInput.textContent = "";
+
+    questionsDiv.appendChild(createInput);
+
+    var createSubmit = document.createElement("button");
+    createSubmit.setAttribute("type", "submit");
+    createSubmit.setAttribute("id", "submit");
+    createSubmit.textContent = "Submit";
+
+    questionsDiv.appendChild(createSubmit);
+
 }
 
 
 
-
-
-
-
-// add time reduction from false answer
-// timer decrement by 10
-
-
-// scorecard / save initials
-var allDone = `All done!
-Your final score is`
-// enter intials - form - submit button 
-
-
-
-/* Start button
-start timer and presented with question
-answer question
-presented with next question
-when answered incorrectly
-timer subtracts 10 seconds
-when all question are answer OR timer reaches zero
+/*when all question are answer OR timer reaches zero
 the game is over
 can save initial and score
 */
