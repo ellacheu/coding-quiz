@@ -28,7 +28,6 @@ var questions = [
 
 ];
 
-// add start quiz button that starts timer and presents question
 
 // starting point of quiz
 var questionIndex = 0;
@@ -45,7 +44,7 @@ var timerLeft = 75;
 var holdInterval = 0;
 var penalty = 10;
 var ulCreate = document.createElement("ul");
-
+// display timer countdown after start quiz
 timer.addEventListener("click", function () {
     if (holdInterval === 0)
         holdInterval = setInterval(function () {
@@ -83,7 +82,7 @@ function render(questionIndex) {
     })
 
 }
-
+// compare event to answers and display correct or wrong in text underneath
 function compare(event) {
     console.log(event);
     var element = event.target;
@@ -103,7 +102,7 @@ function compare(event) {
 
     }
 
-
+// progress the quiz through question index and display score at the end in all done
 questionIndex++;
 
 if(questionIndex >= questions.length) {
@@ -116,7 +115,7 @@ questionsDiv.appendChild(createDiv);
 
 
 }
-
+// all done question div page
 function allDone() {
     questionsDiv.innerHTML = "";
     timeRemaining.innerHTML = "";
@@ -127,27 +126,27 @@ function allDone() {
 
     questionsDiv.appendChild(createTitle);
       
-
+// form
     var createForm = document.createElement("form")
     createForm.setAttribute("id", "createForm");
     createForm.textContent = "Enter your intials: ";
 
     questionsDiv.appendChild(createForm);
-
+// initials input
     var createInput = document.createElement("input");
     createInput.setAttribute("type", "text");
     createInput.setAttribute("id", "initials");
     createInput.textContent = "";
 
     questionsDiv.appendChild(createInput);
-
+// submit button
     var createSubmit = document.createElement("button");
     createSubmit.setAttribute("type", "submit");
     createSubmit.setAttribute("id", "submit");
     createSubmit.textContent = "Submit";
 
     questionsDiv.appendChild(createSubmit);
-
+// event listener to submit button to store high scores and then bring to high scores page
     createSubmit.addEventListener("click", function(){
         var initials = createInput.value;
 
