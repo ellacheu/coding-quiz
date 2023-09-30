@@ -1,8 +1,8 @@
 # coding-quiz
 
 ## Description
-The motivation for this application was the create a timed coding quiz that displays multiple questions with multiple choices.  If the users chooses the wrong answer, the timer will deduct 10 seconds.  At the end of the quiz, the user has the option to input their intials and save their high score into local storage.  In the event that they submit, it will take them to the high scores page that will display all high scores.
-I built this to practice the techniques and skills that have learned using Javascript and Web API features including DOM traversal, setting attributes, event listeners and more.  I learned how to break down my project into smaller task in order to create functional code for each step in order to achieve the required criteria.  I became more proficient with the process of writing in Javascript and gained a lot of experience debugging and problem solving along the way.  This is a very valuable exercise in my learning journey so far.  
+The motivation for this application was to create a timed coding quiz that displays multiple questions with multiple choices.  If the users chooses the wrong answer, the timer will deduct 10 seconds.  At the end of the quiz, the user has the option to input their intials and save their high score into local storage.  In the event that they submit, it will take them to the high scores page that will display all submitted high scores.
+I built this to practice the techniques and skills that I have learned using Javascript and Web API features including DOM traversal, setting attributes, event listeners and more.  I learned how to approach a large project and breaking it down into smaller task in order to create functional code for each task; fulfilling the required criteria.  I became more proficient with the process of coding in Javascript and gained a lot of experience debugging and problem solving along the way.  This is a very valuable exercise in my learning journey so far.  
 
 ## Usage
 Visual as to how to page should appear:
